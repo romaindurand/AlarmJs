@@ -4,16 +4,19 @@
   "description": "Simple alarm clock desktop application",
   "main": "index.html",
   "dependencies": {
-    "bootstrap": "^3.3.5",
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "material-design-lite": "^1.0.0-3",
+    "nw": "^0.12.2"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "npm start test"
+    "test": "npm start test",
+    "start": "nw --disable-gpu --force-cpu-draw"
   },
   "window": {
     "frame": false,
-    "toolbar": false
+    "toolbar": false,
+    "transparent": true
   },
   "author": "@romaindurand",
   "license": "ISC"
