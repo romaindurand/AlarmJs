@@ -16,7 +16,16 @@ function setTimer () {
     minutes : 20,
     url : $(input_url).val(),
     hasRang : false
-  }); 
+  });
+  updateTimerList();
+}
+
+function updateTimerList() {
+  var output = "";
+  timers.forEach(function (timer) {
+    output += "<span class='timer_summary'>"+ timer.hour +":"+ timer.minutes +"</span>";
+  });
+  $(container_timer_list).html(output);
 }
 
 setInterval(function checkTimer(hour, minutes) {
