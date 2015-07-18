@@ -23,3 +23,11 @@ button, iframe, input {
   position: absolute;
   right: 10px;
 }
+
+#container_timer_list {
+	height : 30px;
+}
+
+#container_timer_list span {
+	margin : 5px;
+}
