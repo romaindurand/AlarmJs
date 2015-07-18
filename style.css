@@ -9,6 +9,7 @@ body {
 
 .mdl-textfield {
   width: 500px;
+  padding-top: 0px;
 }
 
 button, iframe, input {
@@ -30,4 +31,12 @@ button, iframe, input {
 
 #container_timer_list span {
 	margin : 5px;
+}
+.time {
+	width : 20px;
+	float : left;
+}
+span.time {
+	margin-top : 5px;
+	text-align: center;
 }
