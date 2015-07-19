@@ -12,12 +12,12 @@ body {
   padding-top: 0px;
 }
 
-button, iframe, input {
+button, input {
   -webkit-app-region: no-drag;
 }
 
-#alarm_container {
-
+iframe {
+	display : none;
 }
 
 #button_settings {
