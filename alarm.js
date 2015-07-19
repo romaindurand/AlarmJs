@@ -1,5 +1,7 @@
 'use strict';
 var $ = window.require("jquery");
+var uriParser = require("./uriParser");
+var _ = require("lodash");
 
 exports.ring = function(url) {
   if (url.target) url = "";
@@ -14,11 +16,14 @@ exports.updateTimerList = function(timers) {
 };
 
 exports.setTimer = function(event) {
-  event.data.timers.push({
+  var uri = $("#input_url").val();
+  var serviceDefault = uriParser.timerDefault[uriParser.getService(uri)];
+  var timer = _.extend({
     hour: +$("#input_hour").val(),
     minutes: +$("#input_minutes").val(),
-    url: $("#input_url").val(),
+    url: uri,
     hasRang: false
-  });
+  }, serviceDefault);
+  event.data.timers.push(timer);
   exports.updateTimerList(event.data.timers);
 };

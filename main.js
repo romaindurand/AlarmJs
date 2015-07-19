@@ -5,10 +5,13 @@ var $ = window.require("jquery");
 var utils = window.require("./utils");
 var timerControls = window.require("./timerControls");
 var alarm = window.require("./alarm");
+
 var timers = [];
 
 $(button_test).click(alarm.ring);
-$(button_set).click({timers : timers}, alarm.setTimer);
+$(button_set).click({
+  timers: timers
+}, alarm.setTimer);
 $(button_settings).click(utils.toggleDevTools);
 $([input_hour, input_minutes]).keydown(timerControls.handleKeyboard);
 

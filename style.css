@@ -2,9 +2,12 @@ body {
   background-color:rgba(0,0,0,0);
 }
 
-.mdl-card {
+.mdl-card__title {
   -webkit-app-region: drag;
-  width: 500px;
+}
+.mdl-card {
+ 	width: 500px;
+	-webkit-user-select: none;
 }
 
 .mdl-textfield {
@@ -27,7 +30,6 @@ iframe {
 
 #container_timer_list {
 	height : 30px;
-	transition: height 2s ease;
 }
 
 #container_timer_list span {
@@ -41,8 +43,8 @@ iframe {
 	float: left;
 	text-align: center;
 	cursor: pointer;
-	-webkit-user-select: none;
 }
+
 .time {
 	width : 20px;
 	float : left;
