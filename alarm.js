@@ -2,16 +2,15 @@
 var $ = window.require("jquery");
 
 exports.ring = function(url) {
-	if (url.target) url = "";
-	$("#alarm_container")[0].src = url || $("#input_url").val();
+  if (url.target) url = "";
+  $("#alarm_container")[0].src = url || $("#input_url").val();
 };
 
 exports.updateTimerList = function(timers) {
-	var output = "";
-	timers.forEach(function(timer) {
-		output += "<span class='timer_summary'>" + timer.hour + ":" + timer.minutes + "</span>";
-	});
-	$("#container_timer_list").html(output);
+  var timer = timers[timers.length - 1];
+  var output = "<span class='timer_summary'>" + timer.hour + ":" + timer.minutes + "</span>";
+  $("#container_timer_list").append(output);
+  $("#container_timer_list span").last().addClass("active");
 };
 
 exports.setTimer = function(event) {

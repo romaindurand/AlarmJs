@@ -5,6 +5,7 @@
   "main": "index.html",
   "dependencies": {
     "jquery": "^2.1.4",
+    "lodash": "^3.10.0",
     "material-design-lite": "^1.0.0-3",
     "nw": "^0.12.2"
   },
