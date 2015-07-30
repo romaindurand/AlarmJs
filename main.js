@@ -8,7 +8,9 @@ var alarm = window.require("./alarm");
 
 var timers = [];
 
-$(button_test).click(alarm.ring);
+$(button_test).click({
+  timer: null
+}, alarm.ring);
 $(button_set).click({
   timers: timers
 }, alarm.setTimer);
@@ -21,8 +23,7 @@ setInterval(function checkTimer(hour, minutes) {
 
   timers.forEach(function(timer, idx) {
     if (!timer.hasRang && currentHour == timer.hour && currentMinutes == timer.minutes) {
-      timer.hasRang = true;
-      alarm.ring(timer.url);
+      alarm.ring(timer);
     }
   });
 }, 1000);

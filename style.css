@@ -54,8 +54,30 @@ span.time {
 	text-align: center;
 }
 
+#popup {
+	width: 400px;
+	height: 300px;
+	background-color: white;
+	margin: 15px;
+	border-radius: 5px;
+	box-shadow: 3px 3px 3px black;
+	display: none;
+	position: absolute;
+	z-index: 10;
+}
+
+#popup_alarm_container {
+	width: 100%;
+	height: 100%;
+}
+
 .active {
   -webkit-animation: animation 780ms linear both;
+  display: block !important;
+}
+
+.active iframe {
+	display: block;
 }
 
 /* Generated with Bounce.js. Edit at http://goo.gl/WFEuFU */

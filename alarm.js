@@ -3,9 +3,21 @@ var $ = window.require("jquery");
 var uriParser = require("./uriParser");
 var _ = require("lodash");
 
-exports.ring = function(url) {
-  if (url.target) url = "";
-  $("#alarm_container")[0].src = url || $("#input_url").val();
+exports.ring = function(event) {
+  if (!event.data.timer) {
+    var uri = $("#input_url").val();
+    var serviceDefault = uriParser.timerDefault[uriParser.getService(uri)];
+    event.data.timer = _.extend({
+      url: uri
+    }, serviceDefault);
+  }
+  if (event.data.timer.popup) {
+    $("#popup").addClass("active");
+    $("#popup_alarm_container")[0].src = event.data.timer.url
+  } else {
+    $("#alarm_container")[0].src = event.data.timer.url;
+  }
+  event.data.timer.hasRang = true;
 };
 
 exports.updateTimerList = function(timers) {
